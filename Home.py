@@ -15,7 +15,7 @@ api_key = st.secrets["GROQ_API_KEY"]
 
 from src.components.navigation import page_config, custom_style, footer
 from src.utils.image_analysis import image_xray
-
+from src.utils.capture import camera_observer
 # Secrets and API Configuration
 api_key = st.secrets["GROQ_API_KEY"]
 client = Groq(api_key=api_key)
@@ -75,7 +75,7 @@ def analyze_image_with_groq(image):
 
 def main():
     """Main application workflow"""
-    st.title("VisionChate AI Image Analysis")
+    st.title("VisionChat AI Image Analysis")
     custom_style()
     # Sidebar navigation
     page = st.sidebar.radio(
@@ -84,15 +84,15 @@ def main():
     )
    
     if page == "Image Analysis":
-        st.text("This is the image classification module.")
+        
         image_xray()
    
     elif page == "Vision LLM":
         image_classification_module()
     
     elif page == "Capture Analysis":
-        st.text("This is the capture analysis module.")
-        # camera_observer()
+        
+        camera_observer()
         
         
     footer()
