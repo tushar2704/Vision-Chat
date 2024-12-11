@@ -48,7 +48,7 @@ def image_xray():
                             "content": f"Analyze this image and describe what you see in detail"
                         }
                     ],
-                    model="mixtral-8x7b-32768"
+                    model="llama-3.2-11b-vision-preview"
                 )
                 st.write(response.choices[0].message.content)
             except Exception as e:
